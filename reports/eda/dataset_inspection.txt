@@ -1,0 +1,224 @@
+CAREER NAVIGATOR - DATASET INSPECTION REPORT
+============================================================
+
+Dataset Shape: (15000, 49)
+Memory Usage: 6.35 MB
+
+COLUMN INFORMATION
+student_id                         str
+education_level                    str
+degree                             str
+specialization                     str
+study_year                       int64
+academic_score_10th            float64
+academic_score_12th            float64
+undergraduate_cgpa             float64
+current_cgpa                   float64
+backlogs                         int64
+attendance_percentage          float64
+academic_projects                int64
+major_projects                   int64
+practical_skill_score          float64
+research_experience              int64
+training_hours                   int64
+programming_score              float64
+problem_solving_score          float64
+aptitude_score                 float64
+technical_knowledge_score      float64
+communication_score            float64
+teamwork_score                 float64
+leadership_score               float64
+adaptability_score             float64
+internship_count                 int64
+internship_duration_months       int64
+certifications_count             int64
+hackathon_participation          int64
+hackathon_wins                   int64
+github_projects                  int64
+resume_score                   float64
+mock_interview_score           float64
+interview_preparation_hours      int64
+interest_ai_ml                 float64
+interest_data_science          float64
+interest_software_dev          float64
+interest_cybersecurity         float64
+interest_cloud                 float64
+interest_uiux                  float64
+skill_ai_ml                    float64
+skill_data_science             float64
+skill_software_dev             float64
+skill_cybersecurity            float64
+skill_cloud                    float64
+skill_uiux                     float64
+placement_status                 int64
+career_readiness                   str
+recommended_career_domain          str
+employability_score            float64
+dtype: object
+
+MISSING VALUES
+student_id                        0
+education_level                   0
+degree                            0
+specialization                    0
+study_year                        0
+academic_score_10th               0
+academic_score_12th               0
+undergraduate_cgpa             9000
+current_cgpa                      0
+backlogs                          0
+attendance_percentage             0
+academic_projects                 0
+major_projects                    0
+practical_skill_score             0
+research_experience               0
+training_hours                    0
+programming_score                 0
+problem_solving_score             0
+aptitude_score                    0
+technical_knowledge_score         0
+communication_score               0
+teamwork_score                    0
+leadership_score                  0
+adaptability_score                0
+internship_count                  0
+internship_duration_months        0
+certifications_count              0
+hackathon_participation           0
+hackathon_wins                    0
+github_projects                   0
+resume_score                      0
+mock_interview_score              0
+interview_preparation_hours       0
+interest_ai_ml                    0
+interest_data_science             0
+interest_software_dev             0
+interest_cybersecurity            0
+interest_cloud                    0
+interest_uiux                     0
+skill_ai_ml                       0
+skill_data_science                0
+skill_software_dev                0
+skill_cybersecurity               0
+skill_cloud                       0
+skill_uiux                        0
+placement_status                  0
+career_readiness                  0
+recommended_career_domain         0
+employability_score               0
+dtype: int64
+
+NUMERICAL SUMMARY
+                               count       mean        std    min      25%     50%      75%     max
+study_year                   15000.0   2.095933   1.041795   1.00   1.0000   2.000   3.0000    4.00
+academic_score_10th          15000.0  74.515426  13.829497  17.36  65.1975  74.790  84.5550  100.00
+academic_score_12th          15000.0  72.807095  13.800100  15.67  63.4600  72.950  82.3950  100.00
+undergraduate_cgpa            6000.0   7.193932   0.857742   4.00   6.6100   7.190   7.7700   10.00
+current_cgpa                 15000.0   7.270511   0.858638   4.00   6.7000   7.280   7.8500   10.00
+backlogs                     15000.0   0.450600   0.694832   0.00   0.0000   0.000   1.0000    5.00
+attendance_percentage        15000.0  77.831845  11.281028  40.00  70.1700  77.980  85.7600  100.00
+academic_projects            15000.0   2.504800   1.554007   0.00   1.0000   2.000   3.0000   10.00
+major_projects               15000.0   0.948933   0.960549   0.00   0.0000   1.000   1.0000    5.00
+practical_skill_score        15000.0  61.874207  15.533420   0.00  51.3300  61.830  72.5700  100.00
+research_experience          15000.0   0.891733   0.857707   0.00   0.0000   1.000   1.0000    5.00
+training_hours               15000.0  70.161867  49.243152   0.00  34.0000  59.000  94.0000  434.00
+programming_score            15000.0  61.764938  14.140914   9.11  52.3000  61.845  71.2500  100.00
+problem_solving_score        15000.0  63.778711  14.073242   8.71  54.2000  63.820  73.2600  100.00
+aptitude_score               15000.0  64.848995  13.989418  10.73  55.4075  64.835  74.3725  100.00
+technical_knowledge_score    15000.0  62.819004  14.010334   4.40  53.2975  62.800  72.3600  100.00
+communication_score          15000.0  65.729073  14.015650  11.69  56.2600  65.740  75.3200  100.00
+teamwork_score               15000.0  69.582981  14.024563  19.08  59.9100  69.780  79.3325  100.00
+leadership_score             15000.0  59.877817  14.235902   5.47  50.2400  59.940  69.4900  100.00
+adaptability_score           15000.0  67.895295  13.977464  12.20  58.5175  67.960  77.4000  100.00
+internship_count             15000.0   0.812200   0.912462   0.00   0.0000   1.000   1.0000    5.00
+internship_duration_months   15000.0   2.844000   3.782938   0.00   0.0000   1.000   5.0000   24.00
+certifications_count         15000.0   2.396600   1.574761   0.00   1.0000   2.000   3.0000   11.00
+hackathon_participation      15000.0   1.006867   0.998509   0.00   0.0000   1.000   2.0000    6.00
+hackathon_wins               15000.0   0.154600   0.392652   0.00   0.0000   0.000   0.0000    3.00
+github_projects              15000.0   3.775200   2.211317   0.00   2.0000   4.000   5.0000   15.00
+resume_score                 15000.0  57.971333  12.415558   0.00  49.7000  57.885  66.3200  100.00
+mock_interview_score         15000.0  57.841083  14.114721   0.00  48.2700  57.650  67.4325  100.00
+interview_preparation_hours  15000.0  36.245000  25.477360   0.00  18.0000  31.000  48.0000  200.00
+interest_ai_ml               15000.0  55.159101  26.078063  10.01  32.4775  55.210  78.0700   99.99
+interest_data_science        15000.0  55.128630  26.060167  10.01  32.3800  55.180  77.4900  100.00
+interest_software_dev        15000.0  55.027341  26.015425  10.01  32.6275  54.880  77.7525   99.99
+interest_cybersecurity       15000.0  55.083371  26.201308  10.00  32.1800  54.950  77.8300   99.99
+interest_cloud               15000.0  55.180049  26.110907  10.01  32.4500  55.360  78.0450  100.00
+interest_uiux                15000.0  55.125435  26.065146  10.00  32.4175  55.180  77.8825   99.99
+skill_ai_ml                  15000.0  44.843175  14.071280   0.00  35.2800  44.740  54.4825   96.43
+skill_data_science           15000.0  44.712112  13.344948   0.00  35.6675  44.690  53.8700   93.60
+skill_software_dev           15000.0  86.380437  12.171902  34.70  78.0775  88.080  98.2700  100.00
+skill_cybersecurity          15000.0  64.084521  14.345889   6.99  54.5075  64.165  73.7200  100.00
+skill_cloud                  15000.0  44.808550  13.059471   0.00  36.0575  44.910  53.5500   95.71
+skill_uiux                   15000.0  44.909639  12.381293   0.00  36.4300  44.840  53.2700   96.26
+placement_status             15000.0   0.364533   0.481315   0.00   0.0000   0.000   1.0000    1.00
+employability_score          15000.0  55.383296   6.907872  29.44  50.6900  55.320  59.9900   82.77
+
+CATEGORICAL DISTRIBUTIONS
+
+student_id
+student_id
+CN000001    1
+CN000002    1
+CN000003    1
+CN000004    1
+CN000005    1
+           ..
+CN014996    1
+CN014997    1
+CN014998    1
+CN014999    1
+CN015000    1
+Name: count, Length: 15000, dtype: int64
+
+education_level
+education_level
+UG    9000
+PG    6000
+Name: count, dtype: int64
+
+degree
+degree
+BA       1847
+BSc      1839
+BCom     1788
+BTech    1766
+BCA      1760
+MBA      1247
+MSc      1212
+MTech    1204
+MA       1173
+MCA      1164
+Name: count, dtype: int64
+
+specialization
+specialization
+Data Science               2171
+Information Technology     2104
+Computer Science           2061
+Electronics                1341
+Artificial Intelligence    1293
+Business                   1283
+Commerce                   1254
+Business Analytics          899
+Cybersecurity               893
+Finance                     876
+AI & ML                     825
+Name: count, dtype: int64
+
+career_readiness
+career_readiness
+Moderate    7500
+Low         3750
+High        3750
+Name: count, dtype: int64
+
+recommended_career_domain
+recommended_career_domain
+Software Development                          5584
+Cybersecurity                                 2958
+UI/UX Design                                  1831
+Cloud Computing                               1550
+Artificial Intelligence & Machine Learning    1549
+Data Science                                  1528
+Name: count, dtype: int64

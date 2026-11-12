@@ -1,0 +1,5 @@
+{
+    "threshold": 0.39999999999999997,
+    "selection_metric": "validation_macro_f1",
+    "validation_macro_f1": 0.5890453317941
+}

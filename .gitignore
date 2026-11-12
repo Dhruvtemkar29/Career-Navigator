@@ -1,0 +1,55 @@
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+**/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Build and cache
+dist/
+build/
+.cache/
+*.log
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Exclude unused experimental models
+models/ann_*.keras
+!models/ann_placement_weighted_final.keras
+
+models/baseline_*_random_forest.joblib
+models/baseline_*_decision_tree.joblib
+
+# Exclude unused baseline models
+models/baseline_placement_logistic_regression.joblib

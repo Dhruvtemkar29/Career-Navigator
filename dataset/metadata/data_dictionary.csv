@@ -1,0 +1,50 @@
+column_name,description,role
+student_id,Unique synthetic student identifier,Identifier
+education_level,UG or PG education level,Input Feature
+degree,Current degree program,Input Feature
+specialization,Academic specialization,Input Feature
+study_year,Current year of study,Input Feature
+academic_score_10th,Class 10 academic percentage,Input Feature
+academic_score_12th,Class 12 academic percentage,Input Feature
+undergraduate_cgpa,Previous undergraduate CGPA; not applicable for UG students,Input Feature
+current_cgpa,Current degree CGPA,Input Feature
+backlogs,Number of academic backlogs,Input Feature
+attendance_percentage,Student attendance percentage,Input Feature
+academic_projects,Number of academic projects,Input Feature
+major_projects,Number of major projects,Input Feature
+practical_skill_score,Practical implementation skill score,Input Feature
+research_experience,Research experience count,Input Feature
+training_hours,Total training hours,Input Feature
+programming_score,Programming proficiency score,Input Feature
+problem_solving_score,Problem-solving score,Input Feature
+aptitude_score,Logical and quantitative aptitude score,Input Feature
+technical_knowledge_score,Technical knowledge score,Input Feature
+communication_score,Communication proficiency score,Input Feature
+teamwork_score,Teamwork score,Input Feature
+leadership_score,Leadership score,Input Feature
+adaptability_score,Adaptability score,Input Feature
+internship_count,Number of internships,Input Feature
+internship_duration_months,Total internship duration in months,Input Feature
+certifications_count,Number of certifications,Input Feature
+hackathon_participation,Number of hackathons participated in,Input Feature
+hackathon_wins,Number of hackathons won,Input Feature
+github_projects,Number of GitHub portfolio projects,Input Feature
+resume_score,Simulated resume assessment score,Input Feature
+mock_interview_score,Mock interview assessment score,Input Feature
+interview_preparation_hours,Interview preparation hours,Input Feature
+placement_status,Simulated placement outcome: 0 or 1,Target
+career_readiness,"Simulated career readiness: Low, Moderate or High",Target
+recommended_career_domain,Simulated recommended career domain,Target
+employability_score,Simulated employability score out of 100,Target
+interest_ai_ml,Student interest score for ai_ml,Input Feature
+skill_ai_ml,Student domain skill score for ai_ml,Input Feature
+interest_data_science,Student interest score for data_science,Input Feature
+skill_data_science,Student domain skill score for data_science,Input Feature
+interest_software_dev,Student interest score for software_dev,Input Feature
+skill_software_dev,Student domain skill score for software_dev,Input Feature
+interest_cybersecurity,Student interest score for cybersecurity,Input Feature
+skill_cybersecurity,Student domain skill score for cybersecurity,Input Feature
+interest_cloud,Student interest score for cloud,Input Feature
+skill_cloud,Student domain skill score for cloud,Input Feature
+interest_uiux,Student interest score for uiux,Input Feature
+skill_uiux,Student domain skill score for uiux,Input Feature

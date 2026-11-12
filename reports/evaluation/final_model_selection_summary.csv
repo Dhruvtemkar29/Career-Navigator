@@ -1,0 +1,5 @@
+Task,Selected Model,Selection Basis,Test Metric,Test Score
+Placement,Class-Weighted ANN,Validation Performance,F1_Macro,0.38858695652173914
+Career Readiness,Logistic Regression,Validation Performance,F1_Macro,0.7668026570414358
+Career Domain,Logistic Regression,Validation Performance,F1_Macro,0.24565600926420403
+Employability Score,Linear Regression,Validation Performance,MAE,3.2113038755953482

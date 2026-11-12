@@ -1,0 +1,8 @@
+{
+    "selected_model": "Class-Weighted ANN",
+    "selection_metric": "Macro F1",
+    "validation_macro_f1": 0.5948605162634564,
+    "validation_accuracy": 0.6017777777777777,
+    "validation_recall": 0.6463414634146342,
+    "validation_roc_auc": 0.6420023878560464
+}
