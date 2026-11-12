@@ -16,9 +16,11 @@ import {
   Monitor,
   Menu,
   X,
-  Compass
+  Compass,
+  LogOut
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 
 const navigation = [
   {
@@ -34,8 +36,7 @@ const navigation = [
   {
     section: 'PREFERENCES',
     items: [
-      { label: 'Profile', icon: UserRound },
-      { label: 'Settings', icon: Settings }
+      { label: 'Profile', icon: UserRound }
     ]
   }
 ];
@@ -44,6 +45,14 @@ export default function Sidebar({ activeItem, onNavigate }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { user, logout } = useAuth();
+
+  const initials = (user?.full_name || 'Student')
+    .split(' ')
+    .map(name => name[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
 
   const handleNavigate = (label) => {
     onNavigate(label);
@@ -82,7 +91,6 @@ export default function Sidebar({ activeItem, onNavigate }) {
             <div className="sidebar-brand-icon">
               <Compass size={23} />
             </div>
-
             {!collapsed && (
               <div className="sidebar-brand-name">
                 Career Navigator<span>.</span>
@@ -100,11 +108,11 @@ export default function Sidebar({ activeItem, onNavigate }) {
         </div>
 
         <div className="sidebar-profile">
-          <div className="sidebar-avatar">CN</div>
+          <div className="sidebar-avatar">{initials}</div>
           {!collapsed && (
-            <div>
-              <strong>Career Workspace</strong>
-              <span>Student Account</span>
+            <div className="sidebar-user-info">
+              <strong>{user?.full_name || 'Student'}</strong>
+              <span>{user?.email || 'Student Account'}</span>
             </div>
           )}
         </div>
@@ -125,7 +133,9 @@ export default function Sidebar({ activeItem, onNavigate }) {
                 >
                   <Icon size={19} strokeWidth={1.9} />
                   {!collapsed && <span>{label}</span>}
-                  {activeItem === label && <span className="sidebar-active-dot" />}
+                  {activeItem === label && (
+                    <span className="sidebar-active-dot" />
+                  )}
                 </button>
               ))}
             </div>
@@ -152,6 +162,15 @@ export default function Sidebar({ activeItem, onNavigate }) {
               </button>
             ))}
           </div>
+
+          <button
+            className="sidebar-nav-item sidebar-logout-button"
+            onClick={logout}
+            title={collapsed ? 'Logout' : undefined}
+          >
+            <LogOut size={19} />
+            {!collapsed && <span>Logout</span>}
+          </button>
 
           <div className="sidebar-version">
             {!collapsed && <span>CAREER NAVIGATOR · V1.0</span>}

@@ -30,7 +30,7 @@ const formatDate = (date) =>
     minute: '2-digit'
   });
 
-export default function Overview() {
+export default function Overview({ onNavigate }) {
   const [historyData, setHistoryData] = useState([]);
   const [totalRecords, setTotalRecords] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -66,11 +66,11 @@ export default function Overview() {
 
   const domainChartData = domainProbabilities
     ? Object.entries(domainProbabilities)
-        .map(([domain, probability]) => ({
-          domain,
-          probability: Number((probability * 100).toFixed(2))
-        }))
-        .sort((a, b) => b.probability - a.probability)
+      .map(([domain, probability]) => ({
+        domain,
+        probability: Number((probability * 100).toFixed(2))
+      }))
+      .sort((a, b) => b.probability - a.probability)
     : [];
 
   const stats = [
@@ -318,11 +318,197 @@ export default function Overview() {
           </section>
         </>
       ) : (
-        <div className="empty-dashboard">
-          <BrainCircuit size={36} />
-          <h3>Your career journey starts here.</h3>
-          <p>No prediction records are available yet. Complete a career assessment to see your results.</p>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+            marginTop: '24px'
+          }}
+        >
+          <section
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1.4fr 0.8fr',
+              gap: '24px',
+              alignItems: 'center',
+              padding: 'clamp(24px, 5vw, 56px)',
+              minHeight: '300px',
+              background: 'var(--surface)',
+              border: '2px solid var(--border)',
+              borderRadius: '14px',
+              boxShadow: '6px 6px 0 var(--border)'
+            }}
+          >
+            <div>
+              <span className="eyebrow">YOUR CAREER JOURNEY / GET STARTED</span>
+              <h2 style={{
+                fontSize: 'clamp(30px, 4vw, 48px)',
+                lineHeight: 1.1,
+                margin: '18px 0'
+              }}>
+                Your future starts with <span style={{ color: '#9BCB28' }}>one assessment.</span>
+              </h2>
+              <p style={{
+                color: 'var(--text-secondary)',
+                lineHeight: 1.7,
+                maxWidth: '520px',
+                marginBottom: '24px'
+              }}>
+                Discover your strengths, understand your career readiness,
+                and explore career opportunities with AI-powered predictive analytics.
+              </p>
+              <button
+                className="cn-button"
+                onClick={() => onNavigate?.('Career Assessment')}
+              >
+                <ClipboardList size={17} />
+                Start Your Career Assessment
+                <ArrowUpRight size={17} />
+              </button>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              minHeight: '180px'
+            }}>
+              <div style={{
+                width: '180px',
+                height: '180px',
+                border: '2px solid var(--border)',
+                borderRadius: '24px',
+                background: '#C6FF45',
+                color: '#20211F',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                transform: 'rotate(-5deg)',
+                boxShadow: '8px 8px 0 var(--border)'
+              }}>
+                <BrainCircuit size={90} strokeWidth={1.5} />
+              </div>
+            </div>
+          </section>
+
+          <div>
+            <p className="eyebrow">HOW IT WORKS</p>
+            <h3 style={{ fontSize: '24px', margin: '8px 0 18px' }}>
+              Three steps to career clarity.
+            </h3>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '18px'
+            }}>
+              {[
+                {
+                  number: '01',
+                  title: 'Assess',
+                  description: 'Share your academic background, skills, interests and experience.',
+                  Icon: ClipboardList
+                },
+                {
+                  number: '02',
+                  title: 'Predict',
+                  description: 'Explore AI-generated predictions about your career outcomes.',
+                  Icon: BrainCircuit
+                },
+                {
+                  number: '03',
+                  title: 'Improve',
+                  description: 'Identify skill gaps and discover ways to improve your career readiness.',
+                  Icon: ChartNoAxesCombined
+                }
+              ].map(({ number, title, description, Icon }) => (
+                <article
+                  key={number}
+                  style={{
+                    padding: '24px',
+                    background: 'var(--surface)',
+                    border: '2px solid var(--border)',
+                    borderRadius: '12px',
+                    boxShadow: '4px 4px 0 var(--border)'
+                  }}
+                >
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '22px'
+                  }}>
+                    <span style={{ color: 'var(--text-secondary)', fontWeight: 700 }}>
+                      {number}
+                    </span>
+                    <Icon size={25} />
+                  </div>
+                  <h3 style={{ fontSize: '20px', marginBottom: '8px' }}>{title}</h3>
+                  <p style={{
+                    color: 'var(--text-secondary)',
+                    fontSize: '14px',
+                    lineHeight: 1.6
+                  }}>
+                    {description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <section style={{
+            padding: '24px',
+            background: 'var(--surface)',
+            border: '2px solid var(--border)',
+            borderRadius: '12px',
+            boxShadow: '4px 4px 0 var(--border)'
+          }}>
+            <p className="eyebrow">COMING INTO FOCUS</p>
+            <h3 style={{ fontSize: '22px', margin: '8px 0' }}>
+              Your career intelligence workspace
+            </h3>
+            <p style={{
+              color: 'var(--text-secondary)',
+              fontSize: '14px',
+              marginBottom: '20px'
+            }}>
+              Complete your first assessment to unlock these personalized insights.
+            </p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+              gap: '12px'
+            }}>
+              {[
+                'Career readiness analysis',
+                'Employability prediction',
+                'Recommended career domains',
+                'Placement outlook',
+                'Skill gap identification',
+                'Personalized career roadmap'
+              ].map((item, index) => (
+                <div key={item} style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: '12px',
+                  border: '1px solid var(--border)',
+                  borderRadius: '8px',
+                  fontSize: '13px'
+                }}>
+                  <span style={{ color: '#9BCB28', fontWeight: 800 }}>
+                    0{index + 1}
+                  </span>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
+
       )}
     </div>
   );

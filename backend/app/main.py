@@ -8,6 +8,7 @@ from app.services.prediction_service import prediction_service
 from app.routes.prediction_routes import router as prediction_router
 from app.routes.history_routes import router as history_router
 from app.database.mongodb import connect_database, close_database
+from app.routes.auth_routes import router as auth_router
 
 
 @asynccontextmanager
@@ -67,3 +68,4 @@ def health():
 
 app.include_router(prediction_router, prefix="/api/v1")
 app.include_router(history_router, prefix="/api/v1")
+app.include_router(auth_router, prefix="/api/v1")

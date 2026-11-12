@@ -1,24 +1,33 @@
 
-import { useTheme } from './context/ThemeContext';
-import { Sun, Moon, Monitor, ArrowUpRight, BrainCircuit } from 'lucide-react';
 import { useState, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useAuth } from './context/AuthContext';
 import SplashScreen from './components/SplashScreen';
+import AuthScreen from './components/AuthScreen';
 import Sidebar from './components/Sidebar';
 import Overview from './components/Overview';
 import CareerAssessment from './components/CareerAssessment';
 import Predictions from './components/Predictions';
 import CareerInsights from './components/CareerInsights';
 import History from './components/History';
+import Profile from './components/Profile';
 
 export default function App() {
-    const { theme, activeTheme, setTheme } = useTheme();
+    const { loading, isAuthenticated } = useAuth();
     const [showSplash, setShowSplash] = useState(true);
     const [activeItem, setActiveItem] = useState('Overview');
 
     const finishSplash = useCallback(() => {
         setShowSplash(false);
     }, []);
+
+    if (loading) {
+        return <div className="app-loading">Loading Career Navigator...</div>;
+    }
+
+    if (!isAuthenticated) {
+        return <AuthScreen />;
+    }
 
     return (
         <AnimatePresence mode="wait">
@@ -32,7 +41,7 @@ export default function App() {
                     />
                     <main className="app-main">
                         {activeItem === 'Overview' ? (
-                            <Overview />
+                            <Overview onNavigate={setActiveItem} />
                         ) : activeItem === 'Career Assessment' ? (
                             <CareerAssessment />
                         ) : activeItem === 'Predictions' ? (
@@ -41,6 +50,8 @@ export default function App() {
                             <CareerInsights />
                         ) : activeItem === 'History' ? (
                             <History />
+                        ) : activeItem === 'Profile' ? (
+                            <Profile />
                         ) : (
                             <div className="dashboard-panel">
                                 <p className="eyebrow">CAREER NAVIGATOR / WORKSPACE</p>
